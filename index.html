@@ -1,40 +1,95 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-	<meta charset="UTF-8">
-	<meta name="renderer" content="webkit">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.4.0/css/mdui.min.css">
-	<title>rom盒子</title>
+    <meta name="referrer" content="never">
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="./mdui/css/mdui.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>ax</title>
 </head>
-<body class="mdui-appbar-with-toolbar mdui-theme-primary-blue mdui-theme-accent-blue">
-	<header class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
-		<div class="mdui-toolbar mdui-color-theme">
-      		<a class="mdui-btn mdui-btn-icon" id="menu"><i class="mdui-icon material-icons">menu</i></a>
-    	</div>  
-  	</header>
-  	<div class="mdui-drawer mdui-drawer-close" id="drawer">
-    	<ul class="mdui-list">
-	    	<li class="mdui-collapse-item" mdui-collapse>
-	    		<div class="mdui-collapse-item">
-				    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-				    	<div class="mdui-list-item-content">XiaoMi</div>
-				    </div>
-				    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-				      <li class="mdui-list-item"><a href="http://www.71geek.com/rombox/mido"><span class="mdui-typo-body-2">mido</span></a></li>
-				    </ul>
-			  	</div>
-			</li>
-	  	</ul>
-	</div>
-<script src="//cdn.bootcss.com/mdui/0.4.0/js/mdui.min.js"></script>
-<script>
-	var inst = new mdui.Drawer('#drawer',{swipe:true});
-	var drawer = document.getElementById('drawer');
-	document.getElementById('menu').addEventListener('click', function () {
-  		inst.toggle();
-	});
-</script>
-</body>
-</html>
+<body class="mdui-theme-primary-black mdui-theme-accent-black">
+<div class="mdui-container mdui-m-t-1">
+    <div class="mdui-col-xs-4 mdui-col-md-2 mdui-text-center">
+        <select class="mdui-select" name="o" mdui-select="{position: 'bottom'}">
+          <option value="mr">最新</option>
+          <option value="bw">最近浏览</option>
+          <option value="mv">最多浏览</option>
+          <option value="tr">最高评分</option>
+          <option value="tf">最受欢迎</option>
+          <option value="lg">最长</option>
+        </select>
+    </div>
+    <div class="mdui-col-xs-4 mdui-col-md-2 mdui-text-center">
+        <select class="mdui-select" name="t" mdui-select="{position: 'bottom'}">
+          <option value="a">所有</option>
+          <option value="t">今天</option>
+          <option value="w">本周</option>
+          <option value="m">本月</option>
+        </select>
+    </div>
+    <div class="mdui-col-xs-4 mdui-col-md-2 mdui-text-center">
+        <select class="mdui-select" name="type" mdui-select="{position: 'bottom'}">
+          <option value="public">公开</option>
+          <option value="private">私密</option>
+        </select>
+    </div>
+    <div class="mdui-col-xs-12 mdui-col-md-2 mdui-text-center">
+        <select class="mdui-select" name="c" mdui-select="{position: 'bottom'}">
+          <option value="1">Pornstar・AV女優</option>
+          <option value="2">JAV・日本AV</option>
+          <option value="3">Uncensored・無修正</option>
+          <option value="4">Teen・ギャル・少女</option>
+          <option value="5">Amateur・素人</option>
+          <option value="6">Anal・アナル・肛交</option>
+          <option value="7">Big Tits・巨乳</option>
+          <option value="8">Cosplay・コスプレ</option>
+          <option value="9">Schoolgirl・女子校生</option>
+          <option value="10">Wife・人妻</option>
+          <option value="11">Mature・熟女</option>
+          <option value="12">SM</option>
+          <option value="13">China・中國</option>
+          <option value="14">Hong Kong 香港</option>
+          <option value="15">Japan・日本</option>
+          <option value="16">Korea・韓国・대한민국</option>
+          <option value="17">Taiwan・台湾</option>
+          <option value="18">Asian・アジア</option>
+          <option value="19">Western・金髪洋物</option>
+          <option value="20">3D</option>
+          <option value="21">VR 360・仮想現実</option>
+          <option value="22">Idol・偶像</option>
+          <option value="23">18+ Movie・映画・電影</option>
+          <option value="24">Anime・アニメ</option>
+        </select>
+    </div>
+    <div class="mdui-col-xs-10 mdui-col-md-3 mdui-text-center">
+          <input class="mdui-textfield-input" type="text" placeholder="关键字搜索"/>
+    </div>
+<button class="mdui-btn mdui-btn-icon" id="search"><i class="mdui-icon material-icons">search</i></button>
+</div>
+
+<div class="mdui-progress mdui-m-t-1" style="display: none">
+    <div class="mdui-progress-indeterminate"></div>
+</div>
+<div class="mdui-container mdui-m-t-1 mdui-m-b-2">
+    <div id="content">
+    </div>
+    <div id="page" class="mdui-col-xs-12 mdui-text-center">
+        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-black" id="prev">上一页</button>
+        <div class="mdui-chip">
+          <span class="mdui-chip-title mdui-color-black"></span>
+        </div>
+        <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-black" id="next">下一页</button>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="./layer/layer.js"></script>
+<script src="./layui/layui.js"></script>
+<script src="./mdui/js/mdui.min.js"></script>
+<script src="./script.js"></script>

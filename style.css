@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.input_set{
+	width: calc(100% - 36px);
+	float: left;
+    margin: 0;
+    padding-top: 0;
+}
