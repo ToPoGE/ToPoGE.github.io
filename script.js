@@ -142,7 +142,7 @@ function videos(){
 }
 window.onload=function(){
     if(screen.width<=600){
-      limit=20;
+      limit=10;
     }
     cate();
     pages();
