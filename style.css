@@ -5,3 +5,20 @@
     margin: 0;
     padding-top: 0;
 }
+
+#mask{
+	background:#000;
+	opacity:0;
+	z-index:999999999;
+	position:fixed;
+	bottom:25px;
+	right:0px;
+}
+#mask1{
+	background:#000;
+	opacity:0;
+	z-index:999999999;
+	position:fixed;
+	top:30px;
+	left:0px;
+}
