@@ -1,19 +1,20 @@
 var o='mr',t='a',type='null',c=null,page=0,query=null,flag=false;
-var url="https://api.avgle.com/v1/videos/0?limit=48";
+var limit=48;
+var url="https://api.avgle.com/v1/videos/0?limit=";
 var chip=document.getElementsByClassName("mdui-chip-title")[0];
 function cate(){
     document.getElementsByName("o")[0].addEventListener('closed.mdui.select', function () {
       if(this.value!=o){
         o=this.value;
         query=null;
-        resource(url+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
+        resource(url+limit+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
       }
     });
     document.getElementsByName("t")[0].addEventListener('closed.mdui.select', function () {
       if(this.value!=t){
         t=this.value;
         query=null;
-        resource(url+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
+        resource(url+limit+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
       }
         
     });
@@ -21,14 +22,14 @@ function cate(){
       if(this.value!=type){
         type=this.value;
         query=null;
-        resource(url+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
+        resource(url+limit+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
       }
     });
     document.getElementsByName("c")[0].addEventListener('closed.mdui.select', function () {
       if(this.value!=c){
         c=this.value;
         query=null;
-        resource(url+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
+        resource(url+limit+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
       }
     });
     document.getElementById("search").onclick=function(){
@@ -87,9 +88,9 @@ function pages(){
       page--;chip.innerText=page+1;
       if(query){
         
-        resource("https://api.avgle.com/v1/search/"+query+"/"+page+"?limit=48");
+        resource("https://api.avgle.com/v1/search/"+query+"/"+page+"?limit="+limit);
       }else{
-        resource("https://api.avgle.com/v1/videos/"+page+"?limit=48"+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
+        resource("https://api.avgle.com/v1/videos/"+page+"?limit="+limit+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
       }
     }else{
       mdui.snackbar({
@@ -101,9 +102,9 @@ function pages(){
     if(flag){
       page++;chip.innerText=page+1;
       if(query){
-        resource("https://api.avgle.com/v1/search/"+query+"/"+page+"?limit=48");
+        resource("https://api.avgle.com/v1/search/"+query+"/"+page+"?limit="+limit);
       }else{
-        resource("https://api.avgle.com/v1/videos/"+page+"?limit=48"+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
+        resource("https://api.avgle.com/v1/videos/"+page+"?limit="+limit+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
       }
     }else{
       mdui.snackbar({
@@ -140,9 +141,12 @@ function videos(){
       });
 }
 window.onload=function(){
+    if(screen.width<=600){
+      limit=20;
+    }
     cate();
     pages();
     chip.innerText=page+1;
-    resource(url+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
+    resource(url+limit+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
 }
 

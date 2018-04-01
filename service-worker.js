@@ -1,4 +1,4 @@
-var CACHE_NAME = "v1522493673";
+var CACHE_NAME = "v1522493674";
 var filesToCache = [
   '/images/ax.png',
   '/mdui/css/mdui.min.css',
