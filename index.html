@@ -10,8 +10,10 @@
     <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
     <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
     <meta name="theme-color" content="#000000">
-    <link rel="stylesheet" href="./mdui/css/mdui.min.css">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link href="/images/ax.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="/mdui/css/mdui.min.css">
+    <link rel="stylesheet" href="/style.css">
     <title>ax</title>
 </head>
 <body class="mdui-theme-primary-black mdui-theme-accent-black">
@@ -36,6 +38,7 @@
     </div>
     <div class="mdui-col-xs-4 mdui-col-md-2 mdui-text-center">
         <select class="mdui-select" name="type" mdui-select="{position: 'bottom'}">
+          <option value="null">公开私密</option>
           <option value="public">公开</option>
           <option value="private">私密</option>
         </select>
@@ -89,7 +92,6 @@
     </div>
 </div>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="./layer/layer.js"></script>
-<script src="./layui/layui.js"></script>
-<script src="./mdui/js/mdui.min.js"></script>
-<script src="./script.js"></script>
+<script src="/layer/layer.js"></script>
+<script src="/mdui/js/mdui.min.js"></script>
+<script src="/script.js"></script>

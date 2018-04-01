@@ -1,0 +1,29 @@
+{
+  "name": "ax",
+  "short_name": "ax",
+  "icons": [{
+    "src": "images/ax.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }, {
+      "src": "images/ax.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "images/ax.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "images/ax.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "images/ax.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2F3BA2"
+}

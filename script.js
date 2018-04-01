@@ -1,4 +1,4 @@
-var o='mr',t='a',type=null,c=null,page=0,query=null,flag=false;
+var o='mr',t='a',type='null',c=null,page=0,query=null,flag=false;
 var url="https://api.avgle.com/v1/videos/0?limit=48";
 var chip=document.getElementsByClassName("mdui-chip-title")[0];
 function cate(){
