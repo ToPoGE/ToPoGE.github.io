@@ -60,7 +60,7 @@ function resource(href){
                     el+='<img src="'+data[i].preview_url+'"/>';
                     el+='<div class="mdui-card-media-covered"><div class="mdui-card-primary"><div class="mdui-card-primary-title">';
                     el+=data[i].keyword+'</div><div class="mdui-card-primary-subtitle">'+data[i].title+'</div></div></div></div>';
-                    el+='<div class="mdui-card-actions mdui-color-black"><button class="mdui-btn mdui-ripple pbtn" name="'+data[i].embedded_url+'">播放</button></div></div></div>';
+                    el+='<div class="mdui-card-actions mdui-color-black"><button class="mdui-btn mdui-ripple pbtn" id="'+data[i].title+'" name="'+data[i].embedded_url+'">播放</button></div></div></div>';
                 }
                 content.innerHTML=el;
                 videos();
