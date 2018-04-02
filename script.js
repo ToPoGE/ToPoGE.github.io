@@ -6,14 +6,14 @@ function cate(){
     document.getElementsByName("o")[0].addEventListener('closed.mdui.select', function () {
       if(this.value!=o){
         o=this.value;
-        query=null;chip.innerText=page=0;
+        query=null;page=0;chip.innerText=1;
         resource(url+limit+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
       }
     });
     document.getElementsByName("t")[0].addEventListener('closed.mdui.select', function () {
       if(this.value!=t){
         t=this.value;
-        query=null;chip.innerText=page=0;
+        query=null;page=0;chip.innerText=1;
         resource(url+limit+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
       }
         
@@ -21,19 +21,19 @@ function cate(){
     document.getElementsByName("type")[0].addEventListener('closed.mdui.select', function () {
       if(this.value!=type){
         type=this.value;
-        query=null;chip.innerText=page=0;
+        query=null;page=0;chip.innerText=1;
         resource(url+limit+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
       }
     });
     document.getElementsByName("c")[0].addEventListener('closed.mdui.select', function () {
       if(this.value!=c){
         c=this.value;
-        query=null;chip.innerText=page=0;
+        query=null;page=0;chip.innerText=1;
         resource(url+limit+"&o="+o+"&t="+t+"&type="+type+"&c="+c);
       }
     });
     document.getElementById("search").onclick=function(){
-        query=document.getElementsByClassName("mdui-textfield-input")[0].value;chip.innerText=page=0;
+        query=document.getElementsByClassName("mdui-textfield-input")[0].value;page=0;chip.innerText=1;
         if(query){
           resource("https://api.avgle.com/v1/search/"+query+"/0?limit=48");
         }else{
